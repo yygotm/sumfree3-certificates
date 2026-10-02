@@ -1,0 +1,26 @@
+# 2026-10-02 19:11 JST, gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, Linux 6.18.33.2-microsoft-standard-WSL2
+S_{1,9,24}: generated to N=15708650, 1699889 terms
+  terms <= K: 268699 ; block: M=1322573, 143119 terms per block
+  (a) identical blocks: yes
+  (b) non-null: yes
+  (c) (Q-6)M=5290292 >= 2K=4965840: yes
+  certificate HOLDS: ultimately periodic
+S_{5,6,31}: generated to N=14865009, 1686515 terms
+  terms <= K: 273587 ; block: M=1132156, 128448 terms per block
+  (a) identical blocks: yes
+  (b) non-null: yes
+  (c) (Q-6)M=5660780 >= 2K=4822586: yes
+  certificate HOLDS: ultimately periodic
+S_{6,13,37}: generated to N=6870372, 831116 terms
+  terms <= K: 255886 ; block: M=77948, 9430 terms per block
+  (a) identical blocks: yes
+  (b) non-null: yes
+  (c) (Q-6)M=4287140 >= 2K=4231088: yes
+  certificate HOLDS: ultimately periodic
+S_{7,13,38}: generated to N=7141140, 874647 terms
+  terms <= K: 269283 ; block: M=81020, 9924 terms per block
+  (a) identical blocks: yes
+  (b) non-null: yes
+  (c) (Q-6)M=4456100 >= 2K=4397840: yes
+  certificate HOLDS: ultimately periodic
+exit status: 0

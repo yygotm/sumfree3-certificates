@@ -84,7 +84,7 @@ of aperiodicity. An extension to 10^8 is in progress.
 
 ## Credits
 
-yygotm. The computations and the write-up were produced with the AI assistants Claude
+Hirotaka Shimizu (GitHub: yygotm). The computations and the write-up were produced with the AI assistants Claude
 (Anthropic) and GPT (OpenAI), working independently of each other.
 
 ## License

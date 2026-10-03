@@ -1,0 +1,18 @@
+S_{1,11,29}: generated to N=94393604, 10174347 terms
+  terms <= K: 1750470 ; block: M=7104875, 765807 terms per block
+  (a) identical blocks: yes
+  (b) non-null: yes
+  (c) (Q-6)M=35524375 >= 2K=32479958: yes
+  certificate HOLDS: ultimately periodic
+S_{1,12,31}: generated to N=79255818, 8549919 terms
+  terms <= K: 1899414 ; block: M=4109928, 443367 terms per block
+  (a) identical blocks: yes
+  (b) non-null: yes
+  (c) (Q-6)M=36989352 >= 2K=35213796: yes
+  certificate HOLDS: ultimately periodic
+S_{1,15,38}: generated to N=91494012, 9849811 terms
+  terms <= K: 1436481 ; block: M=7815075, 841333 terms per block
+  (a) identical blocks: yes
+  (b) non-null: yes
+  (c) (Q-6)M=31260300 >= 2K=26686524: yes
+  certificate HOLDS: ultimately periodic

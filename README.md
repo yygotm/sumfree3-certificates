@@ -107,8 +107,37 @@ arguments with K+QM well below 2^63 are handled correctly.
 
 ## The remaining five triples
 
-The triples (4,6,17), (4,5,19), (7,9,26), (5,7,26) and (6,7,27) show no period up to 10^8,
-i.e. about 11.5 to 12.2 million terms each. This is not evidence of aperiodicity.
+The triples (4,6,17), (4,5,19), (7,9,26), (5,7,26) and (6,7,27) show no period up to 3×10^8,
+i.e. about 34.6 to 36.7 million terms each. This is not evidence of aperiodicity.
+
+- Up to 10^8 the sequences were generated with the CPU generator `tools/sumfree3r_opt.c`.
+- Up to 3×10^8 they were generated with the GPU generator `tools/sumfree3_hip.cpp`. For all five
+  triples the first part of the GPU output is byte-identical to the CPU output up to 10^8.
+  Between 10^8 and 3×10^8 the terms come from the GPU generator only.
+- The period search is `tools/period_fast.c`. `tools/sha256.txt` lists the SHA-256 of the ten output
+  files (five at 10^8, five at 3×10^8).
+
+## Generating the sequences yourself (`tools/`)
+
+- `sumfree3r_opt.c`: the CPU generator used for the 10^8 run. It writes the terms as little-endian
+  uint32 and can resume from a checkpoint.
+- `sumfree3_hip.cpp`: a GPU port of the same generator in HIP. It applies the same rule and the same
+  bitset update, one term at a time. It is a port of the same algorithm, not an independent
+  implementation.
+- `period_fast.c`: finds the least period of the difference sequence (the tail must cover at least
+  three periods), then computes M, the exact K, Q and the Lemma 6 test.
+- `run_gen.sh`: `sh tools/run_gen.sh cpu N` or `sh tools/run_gen.sh gpu N` generates the five
+  remaining sequences up to N, looks for a period, and prints the SHA-256 of each output, to compare
+  with `tools/sha256.txt`.
+
+The GPU output is byte-identical to the CPU output for (4,6,17) up to 10^6, 2×10^7 and 10^8,
+and for the other four triples up to 10^8.
+For N = 10^8 one triple takes about 4.4 minutes on an AMD Radeon RX 9070 XT, against about 29 minutes
+for the CPU generator on one core. For N = 3×10^8 one triple took 30 to 34 minutes on the GPU.
+
+The GPU version was built with ROCm's `hipcc` for gfx1201 (`ARCH=` selects another AMD GPU).
+**Note:** HIP can in principle also be compiled for NVIDIA GPUs through its CUDA backend, but this
+has not been tried.
 
 ## Credits
 
